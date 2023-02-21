@@ -7,4 +7,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="B" />
+      <Folder Include="B\02-21-2023" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="A\randomFile.html" />
+    </ItemGroup>
+
 </Project>
