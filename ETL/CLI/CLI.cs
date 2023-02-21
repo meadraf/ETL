@@ -9,7 +9,7 @@ public class CLI
 
     public void Run()
     {
-        Console.WriteLine("Commands: \nstart\nreset\nstop");
+        Console.WriteLine("Commands: \nstart\nreset\nstop\n");
         
         var isStopped = false;
         while (isStopped == false)
