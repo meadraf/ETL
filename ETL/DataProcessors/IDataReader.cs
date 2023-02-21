@@ -1,10 +1,10 @@
 using ETL.Models;
 
-namespace ETL.FileProcessors;
+namespace ETL.DataProcessors;
 
 public interface IDataReader
 {
     public int InvalidLines { get; }
     public int ParsedLines { get; }
-    public Task<List<InputData>> ReadData(string path);
+    public Task<List<InputData>> ReadDataAsync(string path);
 }

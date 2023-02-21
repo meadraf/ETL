@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="A" />
       <Folder Include="B" />
+      <Folder Include="B\02-21-2023" />
     </ItemGroup>
 
 </Project>

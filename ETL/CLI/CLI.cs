@@ -5,7 +5,7 @@ namespace ETL.CLI;
 
 public class CLI
 {
-    private CancellationTokenSource _cancellationTokenSource = new();
+    private readonly CancellationTokenSource _cancellationTokenSource = new();
 
     public void Run()
     {
@@ -40,17 +40,19 @@ public class CLI
 
     private void Start()
     {
-        
+        var dataProcessingManager = new DataProcessingManager();
+        Task.Run(()=>dataProcessingManager.StartService(_cancellationTokenSource));
     }
 
     private void Reset()
     {
-        
+        _cancellationTokenSource.Cancel();
+        //
     }
 
     private void Stop()
     {
-        
+        _cancellationTokenSource.Cancel();
     }
 
 }
