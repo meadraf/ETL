@@ -52,11 +52,17 @@
             "Payment": 500.0,
             "Date": "2022-01-27T00:00:00",
             "AccountNumber": 1234567
+          },
+          {
+            "Name": "John Doe",
+            "Payment": 500.0,
+            "Date": "2022-01-27T00:00:00",
+            "AccountNumber": 1234567
           }
         ],
-        "Total": 4000.0
+        "Total": 4500.0
       }
     ],
-    "Total": 4000.0
+    "Total": 4500.0
   }
 ]

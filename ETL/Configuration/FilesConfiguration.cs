@@ -33,8 +33,11 @@ public class FilesConfiguration
         {
             throw new Exception("Config file has invalid content.");
         }
-        
+
         InputFolderPath = path.InputFolder;
         OutputFolderPath = path.OutputFolder;
+
+        Directory.CreateDirectory(InputFolderPath);
+        Directory.CreateDirectory(OutputFolderPath);
     }
 }

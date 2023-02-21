@@ -1,11 +1,8 @@
-using System.Diagnostics;
-using System.Security;
-
 namespace ETL.CLI;
 
 public class CLI
 {
-    private readonly CancellationTokenSource _cancellationTokenSource = new();
+    private Action Restart;
 
     public void Run()
     {
@@ -40,19 +37,23 @@ public class CLI
 
     private void Start()
     {
+        Console.WriteLine("Started!");
+        
         var dataProcessingManager = new DataProcessingManager();
-        Task.Run(()=>dataProcessingManager.StartService(_cancellationTokenSource));
+        Restart += dataProcessingManager.Reset;
+        Restart += Start;
+        Task.Run(()=>dataProcessingManager.StartService());
     }
 
     private void Reset()
     {
-        _cancellationTokenSource.Cancel();
-        //
+        Restart.Invoke();
+        Console.WriteLine("Restarted!");
     }
 
     private void Stop()
     {
-        _cancellationTokenSource.Cancel();
+        
     }
 
 }
