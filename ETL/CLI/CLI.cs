@@ -41,19 +41,19 @@ public class CLI
         
         var dataProcessingManager = new DataProcessingManager();
         Restart += dataProcessingManager.Reset;
-        Restart += Start;
         Task.Run(()=>dataProcessingManager.StartService());
     }
 
     private void Reset()
     {
         Restart.Invoke();
+        Start();
         Console.WriteLine("Restarted!");
     }
 
     private void Stop()
     {
-        
+        Restart.Invoke();
     }
 
 }
